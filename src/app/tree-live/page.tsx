@@ -45,7 +45,7 @@ export default function TreeLivePage() {
         <p className="text-[24px] font-extrabold text-sky-500">
           나무는 잘 지내고 있어요.
         </p>
-        <p className="mt-3 text-lg font-semibold">품종: 소나무</p>
+        <p className="mt-3 text-lg font-semibold">품종: 계수나무</p>
       </div>
 
       {/* 하단 CTA 버튼 */}
