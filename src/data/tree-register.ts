@@ -15,19 +15,19 @@ export const treeRegisterItems: TreeRegisterItem[] = [
   },
   {
     id: "2025-08-22",
-    dateLabel: "9월 22일 월요일",
+    dateLabel: "8월 22일 월요일",
     nickname: "닉네임",
     images: ["/images/di/5.jpeg", "/images/di/6.jpeg"],
   },
   {
     id: "2025-07-22",
-    dateLabel: "9월 21일 일요일",
+    dateLabel: "7월 21일 일요일",
     nickname: "닉네임",
     images: ["/images/di/8.jpeg", "/images/di/9.jpeg"],
   },
   {
     id: "2025-06-23",
-    dateLabel: "9월 20일 월요일",
+    dateLabel: "6월 21일 월요일",
     nickname: "닉네임",
     images: ["/images/di/11.jpeg", "/images/di/12.jpeg"],
   },
