@@ -11,7 +11,7 @@ export default function InputDbhPage() {
 
   const goNext = () => {
     // 필요하면 여기서 유효성 체크 가능 (ex. 빈 값 경고)
-    router.push("/tree/add-tree/middle");
+    router.push("/tree/add-tree/full");
   };
 
   return (
@@ -84,7 +84,7 @@ export default function InputDbhPage() {
             <button
               type="button"
               onClick={goNext}
-              className="h-12 w-full rounded-xl bg-[#199CF3] text-white text-[16px] font-semibold cursor-pointer     shadow-md active:translate-y-[1px] transition"
+              className="h-12 w-full rounded-xl bg-[#199CF3] text-white text-[16px] font-semibold cursor-pointer shadow-md active:translate-y-[1px] transition"
             >
               다음
             </button>
