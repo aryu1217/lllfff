@@ -117,20 +117,20 @@ export default function DashboardPage() {
       {/* 하단 버튼 (fixed) */}
       <div className="pointer-events-none fixed inset-x-0 bottom-0 z-50">
         <div
-          className="mx-auto w-full max-w-[680px] px-4 pb-4"
+          className="mx-auto w-full max-w-[420px] px-5 pb-4"
           style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 8px)" }}
         >
           <div className="pointer-events-auto rounded-2xl bg-white/80 p-2 backdrop-blur">
             <button
               type="button"
-              onClick={() => router.push("/tree/add-tree/middle")}
-              className="h-12 w-full rounded-xl bg-[#199CF3] text-[15px] font-semibold text-white shadow-md transition active:translate-y-[1px]"
+              onClick={() => router.push("/tree/add-tree/top")}
+              className="cursor-pointer h-12 w-full rounded-xl bg-[#199CF3] text-white text-[15px] font-semibold shadow-md active:translate-y-[1px] transition"
             >
-              완료
+              다음
             </button>
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 }
