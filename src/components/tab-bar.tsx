@@ -8,14 +8,26 @@ import React from "react";
 export default function TabBar() {
   const pathname = usePathname();
 
-  const isActive = (href: string) =>
-    pathname === href || pathname?.startsWith(href + "/");
+  // 활성 경로 판정 (홈은 '/' 또는 '/home' 모두 활성 처리)
+  const isActive = (href: string) => {
+    const current = pathname ?? "";
+    if (href === "/home") {
+      return (
+        current === "/" || current === "/home" || current.startsWith("/home/")
+      );
+    }
+    return current === href || current.startsWith(href + "/");
+  };
 
+  // 표시 제외 경로
   const HIDE_ROUTES = [
     "/login",
     "/register",
     "/tree/add-tree",
     "/tree/add-tree/middle",
+    "/loading",
+    "/tree-live",
+    "/dashboard",
   ];
   const shouldHide = HIDE_ROUTES.some(
     (r) => pathname === r || pathname?.startsWith(r + "/")
@@ -29,18 +41,29 @@ export default function TabBar() {
     <nav
       className="
         fixed inset-x-0 bottom-0 z-50
-        mx-auto max-w-[420px]  pt-3
+        mx-auto max-w-[420px] pt-3
       "
       style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 8px)" }}
       aria-label="bottom navigation"
     >
       <div className="rounded-t-[28px] bg-white shadow-[0_-8px_24px_rgba(0,0,0,0.08)] border border-white/80">
         <div className="grid grid-cols-4 items-center justify-items-center py-3">
+          {/* 홈 */}
           <Link href="/home" className="flex flex-col items-center gap-1.5">
-            <HomeIcon size={28} color={inactiveColor} />
-            <span className="text-xs font-semibold text-gray-300">홈</span>
+            <HomeIcon
+              size={28}
+              color={isActive("/home") ? activeColor : inactiveColor}
+            />
+            <span
+              className={`text-xs font-semibold ${
+                isActive("/home") ? "text-sky-500" : "text-gray-300"
+              }`}
+            >
+              홈
+            </span>
           </Link>
 
+          {/* 나무 */}
           <Link href="/tree-now" className="flex flex-col items-center gap-1.5">
             <TreeIcon
               size={28}
@@ -55,6 +78,7 @@ export default function TabBar() {
             </span>
           </Link>
 
+          {/* 기부 */}
           <Link href="/donate" className="flex flex-col items-center gap-1.5">
             <DonateIcon
               size={28}
@@ -69,6 +93,7 @@ export default function TabBar() {
             </span>
           </Link>
 
+          {/* 프로필 */}
           <Link href="/profile" className="flex flex-col items-center gap-1.5">
             <ProfileIcon
               size={28}

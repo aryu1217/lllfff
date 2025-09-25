@@ -84,7 +84,7 @@ export default function InputDbhPage() {
             <button
               type="button"
               onClick={goNext}
-              className="h-12 w-full rounded-xl bg-[#199CF3] text-white text-[16px] font-semibold cursor-pointer shadow-md active:translate-y-[1px] transition"
+              className="h-12 w-full rounded-xl bg-[#199CF3] text-white text-[16px] font-semibold cursor-pointer     shadow-md active:translate-y-[1px] transition"
             >
               다음
             </button>

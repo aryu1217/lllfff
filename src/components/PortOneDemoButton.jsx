@@ -20,12 +20,8 @@ export default function PortOneDemoButton({
     script.src = "https://cdn.iamport.kr/js/iamport.payment-1.2.0.js";
     script.async = true;
     script.onload = () => setReady(true);
-    script.onerror = () => {
+    script.onerror = () =>
       console.error("포트원 스크립트를 로드하는 데 실패했습니다.");
-      alert(
-        "결제 모듈 로딩에 실패했습니다. 네트워크 상태를 확인하거나 잠시 후 다시 시도해주세요."
-      );
-    };
     document.body.appendChild(script);
 
     return () => {
@@ -53,19 +49,17 @@ export default function PortOneDemoButton({
       m_redirect_url: `${window.location.origin}${redirectTo}`,
     };
 
+    // ✅ 가장 중요한 디버깅 코드
+    console.log("========================================");
     console.log("결제 요청 직전 파라미터:", paymentParams);
     console.log("사용된 가맹점 식별코드:", merchantId);
+    console.log("========================================");
 
     IMP.request_pay(paymentParams, (rsp) => {
       if (rsp.success) {
         alert(`결제창 진입 성공(데모)\nimp_uid: ${rsp.imp_uid}`);
       } else {
-        console.log("결제 실패 또는 종료:", rsp);
-        alert(
-          `결제창이 종료되었거나 실패했습니다.\n사유: ${
-            rsp.error_msg ?? "알 수 없는 오류"
-          }`
-        );
+        alert(`결제창 종료/실패(데모)\n${rsp.error_msg ?? "사용자 취소"}`);
       }
     });
   };

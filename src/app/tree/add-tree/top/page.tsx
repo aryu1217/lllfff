@@ -128,7 +128,7 @@ export default function AddTreeTopPage() {
           <div className="pointer-events-auto rounded-2xl bg-white/80 p-2 backdrop-blur">
             <button
               type="button"
-              onClick={() => router.push("/tree/add-tee/full")}
+              onClick={() => router.push("/loading")}
               className="cursor-pointer h-12 w-full rounded-xl bg-[#199CF3] text-white text-[15px] font-semibold shadow-md active:translate-y-[1px] transition"
             >
               다음
