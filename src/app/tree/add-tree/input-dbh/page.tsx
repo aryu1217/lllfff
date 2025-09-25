@@ -64,12 +64,6 @@ export default function InputDbhPage() {
               priority={false}
             />
             {/* 라벨 (이미지 위 보조 텍스트) */}
-            <span className="pointer-events-none absolute left-1/2 top-4 -translate-x-1/2 text-sm font-semibold text-gray-800">
-              둘레(cm)
-            </span>
-            <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-gray-800">
-              1.3m
-            </span>
           </div>
         </div>
       </main>
