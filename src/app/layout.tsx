@@ -1,6 +1,8 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
+import TabBar from "@/components/tab-bar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,14 +22,13 @@ export default function RootLayout({
           selection:bg-blue-100 selection:text-blue-900
         "
         style={{
-          // iOS notch-safe padding for any pages that don't handle it themselves
           paddingLeft: "env(safe-area-inset-left)",
           paddingRight: "env(safe-area-inset-right)",
         }}
       >
-        {/* App container: centers pages to mobile width like a real web-app */}
         <div className="mx-auto min-h-screen max-w-[420px] bg-white shadow-sm">
           <Providers>{children}</Providers>
+          <TabBar />
         </div>
       </body>
     </html>
