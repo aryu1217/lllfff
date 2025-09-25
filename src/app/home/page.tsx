@@ -7,6 +7,9 @@ import PlotScoreGauge from "@/components/dashboard/PlotScoreGauge";
 import DBHBarChart from "@/components/dashboard/DBHBarChart";
 import PAHLineChart, { MonthlyPAH } from "@/components/dashboard/PAHLineChart";
 
+// ✅ 헤더 추가
+import Header from "@/components/header";
+
 /** 데모 데이터 */
 const demoDBH = [
   { dbh: 5, count: 11 },
@@ -32,7 +35,7 @@ const demoPAH: MonthlyPAH = {
   12: 14,
 };
 
-/** 요약 카드 (제목 파란색, 본문 더미) */
+/** 요약 카드 */
 function SummaryCard({ title, body }: { title: string; body: string }) {
   return (
     <div className="min-w-[260px] rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5">
@@ -85,6 +88,9 @@ export default function HomePage() {
         paddingBottom: "env(safe-area-inset-bottom)",
       }}
     >
+      {/* ✅ 최상단에 헤더 추가 */}
+      <Header />
+
       {/* 본문 */}
       <main className="flex-1 px-4 pb-28">
         {/* AI 요약 */}
