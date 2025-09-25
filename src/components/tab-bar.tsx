@@ -11,7 +11,12 @@ export default function TabBar() {
   const isActive = (href: string) =>
     pathname === href || pathname?.startsWith(href + "/");
 
-  const HIDE_ROUTES = ["/login", "/register"];
+  const HIDE_ROUTES = [
+    "/login",
+    "/register",
+    "/tree/add-tree",
+    "/tree/add-tree/middle",
+  ];
   const shouldHide = HIDE_ROUTES.some(
     (r) => pathname === r || pathname?.startsWith(r + "/")
   );
@@ -36,14 +41,14 @@ export default function TabBar() {
             <span className="text-xs font-semibold text-gray-300">홈</span>
           </Link>
 
-          <Link href="/tree" className="flex flex-col items-center gap-1.5">
+          <Link href="/tree-now" className="flex flex-col items-center gap-1.5">
             <TreeIcon
               size={28}
-              color={isActive("/tree") ? activeColor : inactiveColor}
+              color={isActive("/tree-now") ? activeColor : inactiveColor}
             />
             <span
               className={`text-xs font-semibold ${
-                isActive("/tree") ? "text-sky-500" : "text-gray-300"
+                isActive("/tree-now") ? "text-sky-500" : "text-gray-300"
               }`}
             >
               나무
